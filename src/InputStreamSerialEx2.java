@@ -3,7 +3,6 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
-import static serializable.JavaSerializable.*;
 
 public class InputStreamSerialEx2 {
 
@@ -14,8 +13,8 @@ public class InputStreamSerialEx2 {
             BufferedInputStream bis = new BufferedInputStream(fis);
             ObjectInputStream in = new ObjectInputStream(bis);
 
-            UserInfo u1 = (UserInfo) in.readObject();
-            UserInfo u2 = (UserInfo) in.readObject();
+            JavaSerializable.UserInfo u1 = (JavaSerializable.UserInfo) in.readObject();
+            JavaSerializable.UserInfo u2 = (JavaSerializable.UserInfo) in.readObject();
             ArrayList list = (ArrayList) in.readObject();
 
             System.out.println("u1 = " + u1);
