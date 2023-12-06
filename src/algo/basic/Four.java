@@ -7,14 +7,17 @@ public class Four {
         Scanner sc = new Scanner(System.in);
         String a = sc.next();
         char[] chars = a.toCharArray();
-        int z = 'Z';
-        int aa = 'a';
-        System.out.println("aa = " + aa);
-        System.out.println("z = " + z);
+        StringBuilder stringBuilder = new StringBuilder();
+
         for(char c : chars){
-            System.out.println( c);
-            int b = c;
-            System.out.println(b);
+            if (Character.isUpperCase(c)) {
+                char c1 = Character.toLowerCase(c);
+                stringBuilder.append(c1);
+            }else{
+                char c1 = Character.toUpperCase(c);
+                stringBuilder.append(c1);
+            }
         }
+        System.out.println(stringBuilder.toString());
     }
 }
