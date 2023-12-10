@@ -25,6 +25,7 @@ public class Fourth {
         // 순위를 담을 List 선언
         List<Integer> rank = new ArrayList<>();
         // score를 반복
+
         for (int i = 0; i < score.length; i++) {
             // score 추가
             rank.add(score[i]);
