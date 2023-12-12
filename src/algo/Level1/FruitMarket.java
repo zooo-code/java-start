@@ -18,6 +18,19 @@ public class FruitMarket {
 
     public int solution(int k, int m, int[] score) {
         int answer = 0;
+        int[] ints = Arrays.stream(score).sorted().toArray();
+        System.out.println(Arrays.toString(ints));
+        int count = 0;
+        for (int i = score.length -1 ; i>=0 ; i--){
+            System.out.println(ints[i]);
+            count++;
+            if (count==m){
+                answer += ints[i] * m;
+                count = 0;
+            }
+        }
+
+
         return answer;
     }
 }
