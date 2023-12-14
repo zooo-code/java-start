@@ -24,11 +24,9 @@ public class NumberPartner {
         for(String key: X.split("")) {
             xMap.put(key, xMap.getOrDefault(key, 0)+1);
         }
-
         for(String key: Y.split("")) {
             yMap.put(key, yMap.getOrDefault(key, 0)+1);
         }
-
 
         for(String key: xMap.keySet()) {
             if(!yMap.containsKey(key)) continue;
