@@ -18,28 +18,39 @@ public class sinGO {
         int[] answer = new int[id_list.length];
         HashMap<String,Integer> sinGoCount =new HashMap<>();
         HashMap<String,Set> sinGOName = new HashMap<>();
+        HashMap<String,Set> bySinGO = new HashMap<>();
         for(String s : id_list){
             sinGoCount.put(s,0);
             sinGOName.put(s,new HashSet<String>());
+            bySinGO.put(s,new HashSet<String>());
         }
 
         for(String s : report){
             String[] split = s.split(" ");
-            sinGoCount.replace(split[0],sinGoCount.get(split[0])+1);
-
             sinGOName.get(split[0]).add(split[1]);
-            System.out.println("sinGOName = " + sinGOName);
-            System.out.println("sinGoCount = " + sinGoCount);
+            bySinGO.get(split[1]).add(split[0]);
+
         }
+        System.out.println("sinGOName = " + sinGOName);
+        System.out.println("bySinGO = " + bySinGO);
         for(String s : id_list){
-            String[] split = s.split(" ");
-            if (sinGoCount.get(split[0]) >=k){
-                Set set = sinGOName.get(split[0]);
-
-
+            if (bySinGO.get(s).size() >=k){
+                System.out.println("bySinGO = " +s +" "+ bySinGO.get(s));
+                bySinGO.get(s);
+                for (Object value : bySinGO.get(s)) {
+                    sinGoCount.replace((String)value,sinGoCount.get(value)+1);
+                }
             }
-        }
 
+        }
+        System.out.println("sinGoCount = " + sinGoCount);
+        int count = 0;
+        for (String s : id_list) {
+            Integer integer = sinGoCount.get(s);
+            answer[count] = integer;
+            count++;
+        }
+        System.out.println("sinGoCount = " + sinGoCount);
         return answer;
     }
 }
