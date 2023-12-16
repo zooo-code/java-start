@@ -17,8 +17,8 @@ public class sinGO {
     public int[] solution(String[] id_list, String[] report, int k) {
         int[] answer = new int[id_list.length];
         HashMap<String,Integer> sinGoCount =new HashMap<>();
-        HashMap<String,Set> sinGOName = new HashMap<>();
-        HashMap<String,Set> bySinGO = new HashMap<>();
+        HashMap<String,HashSet> sinGOName = new HashMap<>();
+        HashMap<String,HashSet> bySinGO = new HashMap<>();
         for(String s : id_list){
             sinGoCount.put(s,0);
             sinGOName.put(s,new HashSet<String>());
@@ -36,9 +36,9 @@ public class sinGO {
         for(String s : id_list){
             if (bySinGO.get(s).size() >=k){
                 System.out.println("bySinGO = " +s +" "+ bySinGO.get(s));
-                bySinGO.get(s);
-                for (Object value : bySinGO.get(s)) {
-                    sinGoCount.replace((String)value,sinGoCount.get(value)+1);
+                HashSet<String> hashSet = bySinGO.get(s);
+                for (String value : hashSet) {
+                    sinGoCount.replace(value,sinGoCount.get(value)+1);
                 }
             }
 
