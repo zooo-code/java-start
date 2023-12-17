@@ -17,12 +17,12 @@ public class sinGO {
     public int[] solution(String[] id_list, String[] report, int k) {
         int[] answer = new int[id_list.length];
         HashMap<String,Integer> sinGoCount =new HashMap<>();
-        HashMap<String,HashSet> sinGOName = new HashMap<>();
-        HashMap<String,HashSet> bySinGO = new HashMap<>();
+        HashMap<String,HashSet<String>> sinGOName = new HashMap<>();
+        HashMap<String,HashSet<String>> bySinGO = new HashMap<>();
         for(String s : id_list){
             sinGoCount.put(s,0);
-            sinGOName.put(s,new HashSet<String>());
-            bySinGO.put(s,new HashSet<String>());
+            sinGOName.put(s,new HashSet<>());
+            bySinGO.put(s,new HashSet<>());
         }
 
         for(String s : report){
