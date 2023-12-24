@@ -6,8 +6,8 @@ public class Process {
 
     public static void main(String[] args) {
         Process process = new Process();
-        int[] priorities = {1, 1, 9, 1, 1, 1};
-        int location = 0;
+        int[] priorities = {2, 1, 3, 2};
+        int location = 2;
         int solution = process.solution(priorities, location);
         System.out.println("solution = " + solution);
     }
@@ -19,9 +19,12 @@ public class Process {
         for(int num : priorities) {
             pq.add(num);
         }
+        System.out.println("pq = " + pq);
         while(!pq.isEmpty()) {
             for(int i=0; i<priorities.length; i++) {
+                System.out.println("priorities = " + priorities[i]);
                 if(priorities[i] == pq.peek()) {
+                    System.out.println("pq.peek() = " + pq.peek());
                     pq.poll();
                     answer++;
                     if(i == location)
