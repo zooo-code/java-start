@@ -1,7 +1,7 @@
 package algo.Level2.sort;
 //https://school.programmers.co.kr/learn/courses/30/lessons/42746?language=java
 import java.util.*;
-//todo : sort compareTo
+//todo : sort compareTo 사전 순 비교
 public class BiggestNumber {
 
     public static void main(String[] args) {
