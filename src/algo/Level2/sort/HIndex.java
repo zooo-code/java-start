@@ -7,10 +7,10 @@ public class HIndex {
     public static void main(String[] args) {
         HIndex hIndex = new HIndex();
 
-        int[] citations = {3, 0, 6, 1, 5};
+        int[] citations = {3, 3, 3, 3, 6,7,7,7};
 
         int solution = hIndex.solution(citations);
-
+        System.out.println("solution = " + solution);
 
     }
 
