@@ -1,5 +1,16 @@
 package deginepattern;
 
+/**
+ * "제어 흐름을 조정하기 위한 목적으로 중간에 대리자를 두는 패턴"
+ *
+ * 프록시 패턴(Proxy Pattern)은 다른 객체에 대한 인터페이스를 제공하여 해당 객체에 대한 접근을 제어하는 패턴입니다.
+ * 프록시는 대상 객체를 감싸고, 대상 객체에 대한 접근을 제어하거나 부가적인 기능을 제공합니다.
+ * 아래는 간단한 Java 코드 예시입니다.
+ *
+ * 예를 들어, 파일을 읽고 쓰는 작업을 하는 클래스 RealFile 이 있고,
+ * 이에 대한 접근을 제어하는 프록시 클래스 FileProxy 를 만들어보겠습니다.
+ *
+ */
 public class ProxyPattern {
     public static void main(String[] args) {
         // 프록시를 사용하여 파일에 접근
