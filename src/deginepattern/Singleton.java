@@ -1,3 +1,5 @@
+package deginepattern;
+
 public class Singleton {
 
     private static Singleton instance;
