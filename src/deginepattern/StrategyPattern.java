@@ -34,6 +34,10 @@ public class StrategyPattern {
         PaymentStrategy cashPayment = new CashPayment();
         Order order3 = new Order(cashPayment);
         order3.processOrder(80);
+        PaymentStrategy paymentStrategy = amount -> System.out.println("나는 새로운 페이먼트이다. 비용은 " + amount);
+
+        Order order = new Order(paymentStrategy);
+        order.processOrder(8000);
     }
 }
 // 결제 전략 인터페이스
