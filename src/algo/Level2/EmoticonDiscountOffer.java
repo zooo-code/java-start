@@ -16,10 +16,12 @@ public class EmoticonDiscountOffer {
     static int[] dis = new int[] {10,20,30,40};
     public int[] solution(int[][] users, int[] emoticons) {
 
-        int[] answer = new int[2];
+        int[] answer;
         list = new ArrayList<>();
         List<int[]> result = new ArrayList<>();
         com(0, emoticons.length, 0, new int[emoticons.length]);
+        // 위의 메서드를 마치면 리스트에 모든 경우의 할인율이 저장된다.
+        list.forEach(a -> System.out.println("a = " + Arrays.toString(a)));
 
         int cnt = 0;
         while (cnt < list.size()) {
@@ -44,16 +46,18 @@ public class EmoticonDiscountOffer {
             cnt++;
             result.add(new int[]{userPlus, userSum});
         }
-
+        // 리스트를 소팅한다. 대전제 자바의 배열은 기본적으로 오름차순이다. 이제 두 배열을 비교할것이다.
         result.sort((o1, o2) -> {
+            //두배열의 첫번째 인덱스 값이 같다면 뒤의 값을 기준으로 배열을 정렬하고,
             if (o1[0] == o2[0]) {
                 return o2[1] - o1[1];
             } else {
+                // 같지 않다면, 배열에 있는 [0] 번째 인덱스를 기준으로 음수이면 그대로 두고 결과가 양수이면 배열의 순서를 바꿔준다.
                 return o2[0] - o1[0];
             }
         });
 
-
+        result.forEach(b -> System.out.println("b = " + Arrays.toString(b)));
         answer = result.get(0);
 
         return answer;
