@@ -6,13 +6,19 @@ public class MirroExit {
 
     public static void main(String[] args) {
         MirroExit mirroExit = new MirroExit();
-        String[] maps = null;
+        String[] maps = {"SOOOL",
+                        "XXXXO",
+                        "OOOOO",
+                        "OXXXX",
+                        "OOOOE"};
         int solution = mirroExit.solution(maps);
         System.out.println("solution = " + solution);
     }
 
     public int solution(String[] maps) {
         int answer = 0;
+
+
         return answer;
     }
 }
