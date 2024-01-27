@@ -1,5 +1,16 @@
 public class Sync {
 
+    public class donate{
+
+        private Long money;
+
+
+        public Long addMoney(long money){
+            this.money += money;
+            return money;
+        }
+    }
+
 
 
 
