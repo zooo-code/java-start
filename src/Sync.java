@@ -1,5 +1,9 @@
 public class Sync {
+    private static int DONATE_MONEY = 0;
 
+    public class donator{
+
+    }
     public class donate{
 
         private Long money;
@@ -11,7 +15,9 @@ public class Sync {
         }
     }
 
+    public static void main(String[] args) {
 
+    }
 
 
     public synchronized void synchronizedMethod(){
