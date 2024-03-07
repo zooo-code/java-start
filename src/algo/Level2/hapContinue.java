@@ -15,27 +15,27 @@ public class hapContinue {
         System.out.println("solution = " + Arrays.toString(solution));
     }
     public static int[] solution(int[] sequence, int k) {
-        int[] answer = {0,0};
-        int gap = 10000000;
+        int N = sequence.length;
+        int left = 0, right = N;
+        int sum = 0;
+        for(int L = 0, R = 0; L < N; L++) {
+            while(R < N && sum < k) {
+                sum += sequence[R++];
+            }
 
-        //모든 루프를 돌면서 계산한다.
-        for(int i = 0 ; i < sequence.length ; i++){
-            int sum = 0;
-            for(int j = i ; j < sequence.length ; j++){
-                // j = i
-                sum += sequence[j];
-                if (sum == k){
-                    if (gap > (j-i)){
-                        gap = Math.min(gap, j - i);
-                        answer[0] = i;
-                        answer[1] = j;
-                        if (gap==0 || gap ==1){
-                            return answer;
-                        }
-                    }
+            if(sum == k) {
+                int range = R - L - 1;
+                if((right - left) > range) {
+                    left = L;
+                    right = R - 1;
                 }
             }
+
+            sum -= sequence[L];
+
         }
+
+        int[] answer = {left, right};
 
         return answer;
     }
