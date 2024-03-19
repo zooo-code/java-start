@@ -15,7 +15,7 @@ public class ShortCut {
     }
 
     public int solution(int[][] maps) {
-        int answer = 0;
+        int answer;
         int[] dx = {-1,1,0,0};
         int[] dy = {0,0,-1,1};
         boolean[][] check = new boolean[maps.length][maps[0].length];
