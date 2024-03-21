@@ -1,4 +1,4 @@
-package hy.lv3;
+package recent.hy.lv3;
 
 import java.util.Arrays;
 import java.util.Scanner;
