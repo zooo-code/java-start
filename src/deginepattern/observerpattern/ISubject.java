@@ -1,0 +1,11 @@
+package deginepattern.observerpattern;
+
+public interface ISubject {
+
+
+    void addObserver(IObserver observer);
+
+    void removeObserver(IObserver observer);
+
+    void notifyObservers();
+}
